@@ -115,9 +115,9 @@ dependencies = [
 
 [[package]]
 name = "artisan_middleware"
-version = "1.5.2"
+version = "1.5.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "81f7c47de520acd48e4c30e6361a193c15e130810796db96317448c2e75330b6"
+checksum = "0311f53de97d1ee4ecd5d09d4d6b32677edd01770352d611b38546a6746b5d89"
 dependencies = [
  "chrono",
  "colored",
@@ -607,9 +607,9 @@ dependencies = [
 
 [[package]]
 name = "dusa_collection_utils"
-version = "2.6.5"
+version = "2.6.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9b5956fa496819cbb3a3bdbdf577a94646edb2c9f6b4df56664d12696c9824d3"
+checksum = "8b114b8107596c3939082b986b6d25acd7106c44a01b6d5b795f112abb8d5c4a"
 dependencies = [
  "block-modes",
  "cfg_rust_features",
@@ -2202,7 +2202,7 @@ dependencies = [
 
 [[package]]
 name = "state"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "artisan_middleware",
  "colored",
