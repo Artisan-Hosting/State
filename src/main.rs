@@ -1,14 +1,14 @@
 use artisan_middleware::{
-    cli::get_user_input, config::AppConfig, log, logger::LogLevel,
-    state_persistence::StatePersistence,
+    cli::get_user_input, config::AppConfig, dusa_collection_utils::{log, core::logger::LogLevel, core::types::stringy::Stringy}, state_persistence::StatePersistence
 };
 
-fn main() {
-    let state_name: dusa_collection_utils::stringy::Stringy = get_user_input("Application name : ");
+#[tokio::main]
+async fn main() {
+    let state_name: Stringy = get_user_input("Application name : ");
 
     let spoofed_config = match AppConfig::new() {
         Ok(mut loaded_data) => {
-            loaded_data.app_name = state_name.to_string();
+            loaded_data.app_name = state_name;
             loaded_data
         }
         Err(e) => {
@@ -23,7 +23,7 @@ fn main() {
 
     let state_path = StatePersistence::get_state_path(&spoofed_config);
 
-    let state_data = match StatePersistence::load_state(&state_path) {
+    let state_data = match StatePersistence::load_state(&state_path).await {
         Ok(loaded_data) => loaded_data,
         Err(e) => {
             log!(
@@ -35,5 +35,5 @@ fn main() {
         }
     };
 
-    print!("{state_data}")
+    println!("{state_data}")
 }
