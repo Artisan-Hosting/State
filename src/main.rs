@@ -1,5 +1,8 @@
 use artisan_middleware::{
-    cli::get_user_input, config::AppConfig, dusa_collection_utils::{log, core::logger::LogLevel, core::types::stringy::Stringy}, state_persistence::StatePersistence
+    cli::get_user_input,
+    config::AppConfig,
+    dusa_collection_utils::{core::{logger::LogLevel, types::{pathtype::PathType, stringy::Stringy}}, log},
+    state_persistence::StatePersistence,
 };
 
 #[tokio::main]
@@ -21,7 +24,11 @@ async fn main() {
         }
     };
 
-    let state_path = StatePersistence::get_state_path(&spoofed_config);
+    let state_path: artisan_middleware::dusa_collection_utils::core::types::pathtype::PathType =
+        PathType::Content(format!(
+            "/opt/artisan/tmp/.{}.state",
+            spoofed_config.app_name
+        ));
 
     let state_data = match StatePersistence::load_state(&state_path).await {
         Ok(loaded_data) => loaded_data,

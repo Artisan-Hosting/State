@@ -89,9 +89,9 @@ dependencies = [
 
 [[package]]
 name = "artisan_middleware"
-version = "5.5.1"
+version = "5.6.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d5a9666bd7dce447d9775e1796578c4eb9f9d72c1c76a771d4d19c1f6654ebde"
+checksum = "5d0f05b1ca16f4d96432dde6f8a8c535ba40d1c48e4622eeed75336c3533cc31"
 dependencies = [
  "aes-gcm",
  "base64 0.22.1",
@@ -554,9 +554,9 @@ dependencies = [
 
 [[package]]
 name = "dusa_collection_utils"
-version = "4.0.1"
+version = "4.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "791754b63b86c15a8a49d3a19adfc2631fbac45cd10713307b7b1c84826eef29"
+checksum = "ec1d80ebde1667c7ba59ad96e224f60e236620e192b78210558c14cec5e56aaa"
 dependencies = [
  "block-modes",
  "cfg_rust_features",

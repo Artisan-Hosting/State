@@ -4,7 +4,7 @@ version = "1.0.1"
 edition = "2021"
 
 [dependencies]
-artisan_middleware = "^5.3.0"
+artisan_middleware = "5.6.3"
 config = "0.14.0"
 serde = "1.0.210"
 serde_json = "1.0.128"
